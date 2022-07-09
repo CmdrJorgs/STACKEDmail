@@ -22,3 +22,10 @@ Create labels with the following names, hierarchy and colors:
 - STORAGE (light grey)
 
 Feel free to add labels, get rid of labels, change colors or change names. Any changes you make here will need to be adjusted in the CSS (don't worry, there's templates you can copy and paste in the code).
+
+### Chromium
+The easiest method to inject the CSS is to use a browser extension like [Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne). This will also keep you up-to-date with any updates made to the code.
+
+Make sure Experimental Web Platform Features are enabled in your browser by going to chrome://flags/#enable-experimental-web-platform-features.
+
+Visit https://userstyles.world/style/5563/stackedmail and click "Install" to download the CSS file. (You may need to refresh Gmail before you see the CSS work.)
