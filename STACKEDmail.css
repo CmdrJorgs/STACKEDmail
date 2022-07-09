@@ -1,3 +1,11 @@
+/* ==UserStyle==
+@name           STACKEDmail
+@namespace      mail.google.com
+@version        1.0.0
+@description    STACKED in Gmail
+@author         David Jorgensen
+==/UserStyle== */
+
 @-moz-document url-prefix("https://mail.google.com/"), domain("mail.google.com") {
     
 	/* This style is made for use with STACK method, a process for working through your email faster in batches. Visit www.stackmethod.com to learn how to use it. */
