@@ -1,0 +1,155 @@
+@-moz-document url-prefix("https://mail.google.com/"), domain("mail.google.com") {
+    
+	/* This style is made for use with STACK method, a process for working through your email faster in batches. Visit www.stackmethod.com to learn how to use it. */
+	/* NOTE: This CSS uses features not yet enabled by default in most browsers. In Chrome, go to chrome://flags/#enable-experimental-web-platform-features and select Enable. If you are not using Chrome, see caniuse.com/?search=%3Ahas to see if this stylesheet can be used in your browser. */
+	
+	/* Theme colors. These should preferrably be the color you assigned to the label. */
+    :root {
+        --action-label-color: #fbe983;
+        --reply-label-color: #b99aff;
+        --do-label-color: #fb4c2f;
+        --meet-label-color: #16a765;
+        --forward-label-color: #f691b2;
+        --review-label-color: #ffad46;
+        --active-label-color: #4986e7;
+        --storage-label-color: #c2c2c2;
+        --assigned-label-color: #42d692;
+        --starred-color: #f4b400;
+        --starred-color-shadow-1: rgba(244,180,0,1);
+        --starred-color-shadow-2: rgba(244,180,0,0.15);
+        --starred-color-transparent: rgba(244,180,0,0);
+        --backing-color: rgba(242,245,245,0.8);
+		
+		/* TEMPLATE COLOR, copy this! Change the "TEMPLATE" part of the variable name to the new label name, and change the color to match the color you selected for your label in Gmail. */
+		--TEMPLATE-label-color: #ffffff;
+    }
+	
+	/* Gradient backgrounds for tagged emails. Tag names must match titles given in each section below. */
+    tr:has(div[title="Assigned"]){
+        background: linear-gradient(
+            90deg, 
+            var(--backing-color) 0%, 
+            var(--backing-color) 50%,
+            var(--assigned-label-color) 100%)
+            !important;
+    }
+    tr:has(div[title="ACTION"]){
+        background: linear-gradient(
+            90deg, 
+            var(--backing-color) 0%, 
+            var(--backing-color) 50%,
+            var(--action-label-color) 100%)
+            !important;
+    }
+    tr:has(div[title="ACTION/1 REPLY"]){
+        background: linear-gradient(
+            90deg, 
+            var(--backing-color) 0%, 
+            var(--backing-color) 50%,
+            var(--reply-label-color) 100%)
+            !important;
+    }
+    tr:has(div[title="ACTION/2 DO"]){
+        background: linear-gradient(
+            90deg, 
+            var(--backing-color) 0%, 
+            var(--backing-color) 50%,
+            var(--do-label-color) 100%)
+            !important;
+    }
+    tr:has(div[title="ACTION/3 MEET"]){
+        background: linear-gradient(
+            90deg, 
+            var(--backing-color) 0%, 
+            var(--backing-color) 50%,
+            var(--meet-label-color) 100%)
+            !important;
+    }
+    tr:has(div[title="ACTION/4 FORWARD"]){
+        background: linear-gradient(
+            90deg, 
+            var(--backing-color) 0%, 
+            var(--backing-color) 50%,
+            var(--forward-label-color) 100%)
+            !important;
+    }
+    tr:has(div[title="ACTION/5 REVIEW"]){
+        background: linear-gradient(
+            90deg, 
+            var(--backing-color) 0%, 
+            var(--backing-color) 50%,
+            var(--review-label-color) 100%)
+            !important;
+    }
+    tr:has(div[title="ACTIVE"]){
+        background: linear-gradient(
+            90deg, 
+            var(--backing-color) 0%, 
+            var(--backing-color) 50%,
+            var(--active-label-color) 100%)
+            !important;
+    }
+    tr:has(div[title="STORAGE"]){ /* The original STACK method uses "ARCHIVE". This is a reserved word in Gmail and cannot be used, so "STORAGE" is used here instead. */
+        background: linear-gradient(
+            90deg, 
+            var(--backing-color) 0%, 
+            var(--backing-color) 50%,
+            var(--storage-label-color) 100%)
+            !important;
+    }
+	
+	/* TEMPLATE LABEL, copy this! Change the title to the new label name, and change the color variable to match the name you created in the theme color section above. */
+	tr:has(div[title="TEMPLATE"]){
+        background: linear-gradient(
+            90deg, 
+            var(--backing-color) 0%, 
+            var(--backing-color) 50%,
+            var(--TEMPLATE-label-color) 100%)
+            !important;
+    }
+
+	/* Emphasize starred emails */
+    @keyframes starred {
+        from {background: var(--starred-color-shadow-1);}
+        to {background: var(--starred-color-shadow-2);}
+    }
+    tr:has(img[alt="Starred"]) > td.PF {
+        background: var(--starred-color);
+		width: 10px;
+		margin-right: -7px;
+        animation-name: starred;
+        animation-duration: .8s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+    }
+	
+	/* Larger tags at top of emails */
+	.hN {
+		padding-top: 4px;
+		padding-bottom: 4px;
+		margin-top:-8px;
+	}
+	.hO {
+		padding: 4px 8px 4px 8px;
+		margin-top:-8px;
+	}
+	
+	/* Various beauty tweaks */
+    .aqn {
+        min-width: 162px;
+    }
+    .aeN {
+        display: none; /* hides Meet/Spaces left sidebar */
+    }
+    .aKh {
+        border-top-left-radius:10px!important;
+        border-top-right-radius:10px!important;
+    }
+    .bAt, .AO, .if, .aeJ {
+        border-radius:20px!important;
+    }
+    .zE {
+        background: rgba(253, 237, 193, 1)!important;
+    }
+}
